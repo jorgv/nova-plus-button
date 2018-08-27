@@ -20,13 +20,13 @@ export default {
          * Send an update request to increase value for this resource
          */
         Increase() {
-            this.field.value = this.field.value + this.field.increaseValue;          
+            this.field.value += this.field.increaseValue;          
             return Nova.request().post(
                 `/api/${this.resourceName}/increase/${this.$parent.resource.id.value}`,
                 {
                     count: this.field.value
                 }
-                )  
+            )  
         },
     }
 }
