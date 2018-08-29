@@ -1,7 +1,7 @@
 <template>
     <span>
         <button
-        @click="Increase"
+        @click="increaseResource"
         class="cursor-pointer text-70 hover:text-primary mr-3"
         >
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" aria-labelledby="updateRequest" role="presentation" class="fill-current">
@@ -9,7 +9,7 @@
         </button>
         <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">{{field.value}}</span>
         <button
-        @click="Decrease"
+        @click="decreaseResource"
         class="cursor-pointer text-70 hover:text-primary mr-3" v-show="field.decrease"
         >
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" aria-labelledby="updateRequest" role="presentation" class="fill-current">
@@ -26,7 +26,7 @@ export default {
         /**
          * Send an update request to increase value for this resource
          */
-        Increase() {
+        increaseResource() {
             this.field.value += this.field.increaseValue;          
             return Nova.request().post(
                 `/api/${this.resourceName}/increase/${this.$parent.resource.id.value}`,
@@ -41,7 +41,7 @@ export default {
         /**
          * Send an update request to decrease value for this resource
          */
-        Decrease() {
+        decreaseResource() {
             this.field.value -= this.field.increaseValue;          
             return Nova.request().post(
                 `/api/${this.resourceName}/decrease/${this.$parent.resource.id.value}`,
