@@ -27,10 +27,10 @@ class PlusButton extends Field
     /**
      * Set if decrease button should show.
      *
-     * @param  bool  $bool
+     * @param  bool  $decrease
      * @return $this
      */
-    public function decrease($bool = true)
+    public function decrease($decrease = true)
     {
         return $this->withMeta(['decrease' => $decrease]);
     }    
