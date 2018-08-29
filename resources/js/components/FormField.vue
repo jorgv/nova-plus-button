@@ -13,6 +13,7 @@
                 {{ firstError }}
             </p>
             <button
+            type="button"
             @click="increase"
             class="cursor-pointer text-70 hover:text-primary mr-3"
             >
@@ -20,6 +21,7 @@
                 <path d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-9h2a1 1 0 0 1 0 2h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1 0-2h2V9a1 1 0 0 1 2 0v2z"/></svg>
             </button>
             <button
+            type="button"
             @click="decrease"
             class="cursor-pointer text-70 hover:text-primary mr-3" v-show="field.decrease"
             >
@@ -63,13 +65,13 @@ export default {
          * Send an update request to increase value for this resource
          */
         increase() {
-            this.field.value += this.field.increaseValue;          
+            this.value += this.field.increaseValue;          
         },
         /**
          * Send an update request to decrease value for this resource
          */
         decrease() {
-            this.field.value -= this.field.increaseValue;          
+            this.value -= this.field.increaseValue;          
         },        
     }
 }
