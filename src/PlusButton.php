@@ -16,11 +16,22 @@ class PlusButton extends Field
     /**
      * Set the increase value.
      *
-     * @param  array  $value
+     * @param  int  $value
      * @return $this
      */
     public function increaseValue(int $value = 1)
     {
         return $this->withMeta(['increaseValue' => $value]);
     }
+
+    /**
+     * Set if decrease button should show.
+     *
+     * @param  bool  $bool
+     * @return $this
+     */
+    public function decrease($bool = true)
+    {
+        return $this->withMeta(['decrease' => $decrease]);
+    }    
 }
