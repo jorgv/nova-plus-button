@@ -63,13 +63,13 @@ export default {
          * Send an update request to increase value for this resource
          */
         increase() {
-            this.value += this.field.increaseValue;          
+            value += this.field.increaseValue;          
         },
         /**
          * Send an update request to decrease value for this resource
          */
         decrease() {
-            this.value -= this.field.increaseValue;          
+            value -= this.field.increaseValue;          
         },        
     }
 }
